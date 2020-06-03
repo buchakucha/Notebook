@@ -1,0 +1,24 @@
+<div class="large-12 cell">
+<a class="button secondary" href="<%= note_new_path %>">Добавить запись</a>
+<table>
+      <thead>
+        <tr style="color:#000000; font-family: 'Caveat', cursive">
+          <th>Фамилия</th>
+          <th>Имя</th>
+          <th>Cотовый телефон</th>
+          <th>Доп. информация</th>
+        </tr>
+      </thead>
+      <tbody>
+       <% @notes.each do |note| %>
+          <tr>
+            <td><%= note.surname %></td>
+            <td><%= note.name %></td>
+            <td><%= note.cellphone %></td>
+            <td><a href="<%= path(note) %>">Подробнее</a></td>
+          </tr>
+        <% end %>
+      </tbody>
+      </table>
+  </div>
+</div>

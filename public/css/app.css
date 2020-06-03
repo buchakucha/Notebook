@@ -1,0 +1,13 @@
+.error {
+    border-color: red;
+  }
+
+.error_message {
+    font-style: italic;
+  }
+
+body {
+    background-color: #faebf9;
+  }
+
+

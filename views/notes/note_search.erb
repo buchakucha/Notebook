@@ -1,0 +1,31 @@
+<form method="get">
+<div class="large-12 cell">
+    <div class="large-12 cell">
+        <label>Выберете дату:</label> <input name="birthday" type="date">
+        <input class="button secondary" type="submit" value="Найти">
+    </div>
+ <%if @notes_search.size > 0 %>
+<table>
+      <thead>
+        <tr style="color:#000000; font-family: 'Caveat', cursive">
+          <th>Фамилия</th>
+          <th>Имя</th>
+          <th>День рождения/th>
+          <th>Доп. информация</th>
+        </tr>
+      </thead>
+      <tbody>
+       <% @notes_search.each do |note| %>
+          <tr>
+            <td><%= note.surname %></td>
+            <td><%= note.name %></td>
+            <td><%= note.birthday %></td>
+            <td><a href="<%= path(note) %>">Подробнее</a></td>
+          </tr>
+        <% end %>
+      </tbody>
+      </table>
+    <% end %>
+  </div>
+</div>
+</form>

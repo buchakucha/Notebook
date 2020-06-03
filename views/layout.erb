@@ -1,0 +1,29 @@
+<!doctype html>
+<html class="no-js" lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Записная книжка</title>
+    <link rel="stylesheet" href="/css/foundation.css">
+    <link rel="stylesheet" href="/css/app.css">
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 cell">
+          <h2 align="center" style="color:#BC8F8F; font-family: 'Caveat', cursive">Ваша записная книжка</h2>
+          <br>
+        </div>
+        <div class="cell large-4" style="text-align: center"><a href="/notebook" style="color:#000000; font-family: 'Caveat', cursive">ПОСМОТРЕТЬ ЗАПИСНУЮ КНИЖКУ</a></div>
+           <div class="cell large-4" style="text-align: center"><a href="/notebook/search" style="color:#000000; font-family: 'Caveat', cursive">НАЙТИ БЛИЖАЙШИЕ ДНИ РОЖДЕНИЯ</a></div>
+          <div class="cell large-4" style="text-align: center"><a href="/invitation" style="color:#000000; font-family: 'Caveat', cursive">СОСТАВИТЬ ПРИГЛАШЕНИЯ</a></div>
+      </div>
+      <br>
+      <%= yield %>
+    </div>
+    <script src="/js/vendor/jquery.js"></script>
+    <script src="/js/vendor/what-input.js"></script>
+    <script src="/js/vendor/foundation.js"></script>
+  </body>
+</html>

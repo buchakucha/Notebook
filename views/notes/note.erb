@@ -1,0 +1,21 @@
+<div class="grid-x">
+    <div class="cell large-12" align="center">
+        <div class="card" style="width: 500px;">
+            <div class="card-divider"></div>
+            <div class="card-section">
+            <h4 style="color:#BC8F8F; font-family: 'Caveat', cursive"> <%= @note.surname %> <%= @note.name %> <%= @note.patronymic %></h4>
+                <br>
+                <p>Сотовый телефон: <%= @note.cellphone %></p>
+                <p>Домашний телефон: <%= @note.homephone %></p>
+                <p>Адрес: <%= @note.address %></p>
+                <p>День рождения: <%= @note.birthday %></p>
+                <p>Пол: <%= @note.sex %></p>
+                <p>Статус: <%= @note.status %></p>
+            </div>
+        </div>
+    <a class="button secondary" href="<%= path(@note, 'edit') %>">Редактировать</a>
+    <a class="button secondary" href="<%= path(@note, 'delete') %>">Удалить</a>
+    <br><br>
+    </div>
+    <a href="<%= notes_path %>" style="font-family: 'Caveat', cursive">Назад к записной книжке</a>
+</div>

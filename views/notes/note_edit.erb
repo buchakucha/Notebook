@@ -1,0 +1,29 @@
+<% form({ method: :post },{ obj: @parameters }) do |f| %>
+  <div class="grid-x grid-margin-x">
+    <div class="large-12 cell">
+      <%= f.input(:cellphone, type: :text, label: 'Сотовый телефон', placeholder: '8-888-888-888')%>
+        <% if  @errors.key?(:cellphone)%>
+            <h6 style="color: red"><%= @errors[:cellphone].first %></h6>
+        <% end %>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:homephone, type: :text, label: 'Домашний телефон', placeholder: '55-55-55')%>
+        <% if  @errors.key?(:homephone)%>
+            <h6 style="color: red"><%= @errors[:homephone].first %></h6>
+        <% end %>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:address, type: :text, label: 'Адрес', placeholder: 'Москва')%>
+        <% if  @errors.key?(:address)%>
+            <h6 style="color: red"><%= @errors[:address].first %></h6>
+        <% end %>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:status, type: :select, label: 'Статус', options: StatusType.all_types)%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.button(value: 'Сохранить', class: 'button secondary') %>
+      <a href="<%= path(@note) %>" class="button secondary">Отмена</a>
+    </div>
+  </div>
+<% end %>
