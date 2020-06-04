@@ -2,58 +2,31 @@
   <div class="grid-x grid-margin-x">
     <div class="large-12 cell">
       <%= f.input(:surname, type: :text, label: 'Фамилия', placeholder: 'Иванов')%>
-        <% if  @errors.key?(:surname)%>
-            <h6 style="color: red"><%= @errors[:surname].first %></h6>
-        <% end %>
     </div>
     <div class="large-12 cell">
       <%= f.input(:name, type: :text, label: 'Имя', placeholder: 'Иван')%>
-        <% if  @errors.key?(:name)%>
-            <h6 style="color: red"><%= @errors[:name].first %></h6>
-        <% end %>
     </div>
     <div class="large-12 cell">
       <%= f.input(:patronymic, type: :text, label: 'Отчество', placeholder: 'Иванович')%>
-        <% if  @errors.key?(:patronymic)%>
-            <h6 style="color: red"><%= @errors[:patronymic].first %></h6>
-        <% end %>
     </div>
     <div class="large-12 cell">
-      <%= f.input(:cellphone, type: :text, label: 'Сотовый телефон', placeholder: '8-888-888-888')%>
-        <% if  @errors.key?(:cellphone)%>
-            <h6 style="color: red"><%= @errors[:cellphone].first %></h6>
-        <% end %>
+      <%= f.input(:cellphone, type: :text, label: 'Сотовый телефон', placeholder: '8888888888')%>
     </div>
     <div class="large-12 cell">
-      <%= f.input(:homephone, type: :text, label: 'Домашний телефон', placeholder: '55-55-55')%>
-        <% if  @errors.key?(:homephone)%>
-            <h6 style="color: red"><%= @errors[:homephone].first %></h6>
-        <% end %>
+      <%= f.input(:homephone, type: :text, label: 'Домашний телефон', placeholder: '555555')%>
     </div>
     <div class="large-12 cell">
       <%= f.input(:address, type: :text, label: 'Адрес', placeholder: 'Москва')%>
-        <% if  @errors.key?(:address)%>
-            <h6 style="color: red"><%= @errors[:address].first %></h6>
-        <% end %>
     </div>
     <div class="large-12 cell">
       <%= f.input(:birthday, type: :date, label: 'День Рождения')%>
-        <% if  @errors.key?(:birthday)%>
-            <h6 style="color: red"><%= @errors[:birthday].first %></h6>
-        <% end %>
     </div>
     <div class="large-12 cell">
       <%= f.input(:sex, type: :select, label: 'Пол', options: SexType.all_types, add_blank: true)%>
-        <% if  @errors.key?(:sex)%>
-            <h6 style="color: red"><%= @errors[:sex].first %></h6>
-        <% end %>
     </div>
     <div class="large-12 cell">
       <%= f.input(:status, type: :select, label: 'Статус', options: StatusType.all_types, add_blank: true)%>
     </div>
-    <% if  @errors.key?(:status)%>
-            <h6 style="color: red"><%= @errors[:status].first %></h6>
-        <% end %>
     <div class="large-12 cell">
       <%= f.button(value: 'Добавить', class: 'button secondary') %>
       <a href="<%= notes_path %>" class="button secondary">Отмена</a>

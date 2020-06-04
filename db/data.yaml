@@ -4,39 +4,49 @@
   :name: Владислава
   :surname: Бучина
   :patronymic: Ярославовна
-  :cellphone: 8-962-202-29-05
-  :homephone: 57-85-74
+  :cellphone: 89622022905
+  :homephone: 578574
   :address: Ярославль
   :birthday: 2000-12-15
   :sex: Женский
-  :status: Студентка
+  :status: Друг
 - :id: 2
   :name: Игорь
   :surname: Красавин
   :patronymic: Сергеевич
-  :cellphone: 8-888-888-88-88
-  :homephone: 55-55-55
+  :cellphone: 88888888888
+  :homephone: 555555
   :address: Ярославль
   :birthday: 1998-06-12
   :sex: Мужской
-  :status: Студент
+  :status: Друг
 - :id: 3
   :name: Анастасия
   :surname: Бойко
   :patronymic: Сергеевна
-  :cellphone: 8-888-888-88-88
-  :homephone: 55-55-55
+  :cellphone: 88888888888
+  :homephone: 555555
   :address: Ярославль
   :birthday: 2000-07-14
   :sex: Женский
-  :status: Студентка
+  :status: Друг
 - :id: 4
   :name: Дарья
   :surname: Афанасьева
   :patronymic: Олеговна
-  :cellphone: 8-888-888-88-88
-  :homephone: 44-44-44
+  :cellphone: 88888888888
+  :homephone: 444444
   :address: Ярославль
   :birthday: 2001-01-14
   :sex: Женщина
   :status: Друг
+- :id: 5
+  :name: Александр
+  :surname: Бучин
+  :patronymic: Ярославович
+  :cellphone: 8888888888
+  :homephone: 555555
+  :address: Мой дом
+  :birthday: 2004-12-17
+  :sex: Мужчина
+  :status: Cемья

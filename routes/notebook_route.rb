@@ -33,16 +33,13 @@ class NotebookApplication
       r.on 'edit' do
         r.get do
           @parameters = @note.to_h
-          @errors = {}
           view('note_edit')
         end
 
         r.post do
-          sym_params = r.params.map { |key, value| [key.to_sym, value] }.to_h
-          @params = NoteEditContract.new.call(sym_params)
-          @errors = @params.errors.to_h
-          if @params.success?
-            opts[:notes].update_note(@note.id, @params.to_h)
+          @parameters = DryResultFormeWrapper.new(NoteEditSchema.call(r.params))
+          if @parameters.success?
+            opts[:notes].update_note(@note.id, @parameters)
             r.redirect(path(@note))
           else
             view('note_edit')
@@ -83,22 +80,40 @@ class NotebookApplication
     r.on 'new' do
       r.get do
         @parameters = {}
-        @errors = {}
         view('note_new')
       end
 
       r.post do
-        sym_params = r.params.map { |key, value| [key.to_sym, value] }.to_h
-        @params = NoteNewContract.new.call(sym_params)
-        @errors = @params.errors.to_h
-        if @params.success?
-          note = opts[:notes].add_note(@params.to_h)
+        @parameters = DryResultFormeWrapper.new(NoteNewSchema.call(r.params))
+        if @parameters.success?
+          note = opts[:notes].add_note(@parameters)
           r.redirect(path(note))
         else
-          puts @errors
           view('note_new')
         end
       end
     end
+
+    # r.on 'new' do
+    #   r.get do
+    #     @parameters = {}
+    #     @errors = {}
+    #     view('note_new2')
+    #   end
+
+    #   r.post do
+    #     sym_params = r.params.map { |key, value| [key.to_sym, value] }.to_h
+    #     @params = NoteNewContract.new.call(sym_params)
+    #     @errors = @params.errors.to_h
+    #     if @params.success?
+    #       note = opts[:notes].add_note(@params.to_h)
+    #       r.redirect(path(note))
+    #     else
+    #       puts @errors
+    #       view('note_new2')
+    #     end
+    #   end
+    # end
+
   end
 end
