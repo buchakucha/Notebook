@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'date'
 # Routes for the cool books of this application
 class NotebookApplication
@@ -70,11 +71,10 @@ class NotebookApplication
 
     r.on 'search' do
       r.get do
+        @notes = opts[:notes].all_notes
         @notes_search = {}
-    #   puts r.params['birthday']
-    #  puts Date.parse(r.params['birthday']).mon.class
-      @notes_search = Selector.select_birthday(opts[:notes], r.params['birthday'])
-      view('note_search')
+        @notes_search = Selector.select_birthday(@notes, r.params['birthday']) unless r.params['birthday'].nil?
+        view('note_search')
       end
     end
 
@@ -87,15 +87,15 @@ class NotebookApplication
 
       r.post do
         sym_params = r.params.map { |key, value| [key.to_sym, value] }.to_h
-          @params = NoteNewContract.new.call(sym_params)
-          @errors = @params.errors.to_h
-          if @params.success?
-            note = opts[:notes].add_note(@params.to_h)
-            r.redirect(path(note))
-          else
-            puts @errors
-            view('note_new')
-          end
+        @params = NoteNewContract.new.call(sym_params)
+        @errors = @params.errors.to_h
+        if @params.success?
+          note = opts[:notes].add_note(@params.to_h)
+          r.redirect(path(note))
+        else
+          puts @errors
+          view('note_new')
+        end
       end
     end
   end

@@ -2,12 +2,12 @@
 
 # The list of possible types
 module SexType
-    MAN = 'Мужчина'
-    WOMAN = 'Женщина'
+  MAN = 'Мужчина'
+  WOMAN = 'Женщина'
 
-    def self.all_types
-      [
-        MAN, WOMAN
-      ]
-    end
+  def self.all_types
+    [
+      MAN, WOMAN
+    ]
   end
+end

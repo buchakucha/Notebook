@@ -6,7 +6,6 @@ require_relative 'note'
 
 # The class of notes
 class NoteList
-
   def initialize(notes = [])
     @notes = notes.map do |note|
       [note.id, note]
@@ -15,13 +14,6 @@ class NoteList
 
   def all_notes
     @notes.values
-  end
-
-  def each
-    return enum_for(:each) unless block_given?
-    @notes.each do |note|
-      yield note
-    end
   end
 
   def note_by_id(id)
