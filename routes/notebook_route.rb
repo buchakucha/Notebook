@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'date'
 # Routes for the cool books of this application
 class NotebookApplication
   path :notes, '/notebook'
@@ -73,7 +72,10 @@ class NotebookApplication
       r.get do
         @notes = opts[:notes].all_notes
         @notes_search = {}
-        @notes_search = Selector.select_birthday(@notes, r.params['birthday']) unless r.params['birthday'].nil?
+        if !r.params['birthday'].nil? && r.params['birthday'] != ''
+          min_mon = Date.parse(r.params['birthday']).mon
+          @notes_search = Selector.select_birthday(@notes, min_mon)
+        end
         view('note_search')
       end
     end

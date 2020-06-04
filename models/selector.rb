@@ -4,11 +4,15 @@ require 'date'
 
 require_relative 'note'
 require_relative 'note_list'
+
 # module for selecting the necessary data
 module Selector
-  def self.select_birthday(notes, date)
-    min_mon = Date.parse(date).mon
-    max_mon = min_mon + 1
+  def self.select_birthday(notes, min_mon)
+    max_mon = if min_mon != 12
+                min_mon + 1
+              else
+                1
+              end
     select_notes = []
     notes.each do |note|
       select_notes.append(note) if note.birthday.mon == min_mon || note.birthday.mon == max_mon
@@ -16,9 +20,3 @@ module Selector
     select_notes
   end
 end
-
-# notes: []
-# [note]
-#  note: [x,y]
-# x: number
-# y: struct
