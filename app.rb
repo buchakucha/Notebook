@@ -24,6 +24,7 @@ class NotebookApplication < Roda
 
   require_relative 'routes/homepage_route.rb'
   require_relative 'routes/notebook_route.rb'
+  require_relative 'routes/invitation_route.rb'
 
   opts[:notes] = Store.new.note_list
 

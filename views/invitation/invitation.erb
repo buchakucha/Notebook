@@ -1,0 +1,22 @@
+<% form({ method: :get },{ obj: @parameters }) do |f| %>
+  <div class="grid-x grid-margin-x">
+  <div class="large-12 cell">
+      <%= f.input(:event, type: :text, label: 'Событие', placeholder: 'День рождения')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:status, type: :select, label: 'Статус приглашённых', options: StatusType.all_types, add_blank: true)%>
+    </div>
+     <div class="large-12 cell">
+      <%= f.input(:date, type: :date, label: 'Дата события')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:address, type: :text, label: 'Место проведения', placeholder: 'Ярославль, ул. Волкова, д. 1')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.input(:file, type: :text, label: 'Название файла с приглашениями', placeholder: 'Birthday')%>
+    </div>
+    <div class="large-12 cell">
+      <%= f.button(value: 'Создать приглашения', class: 'button secondary') %>
+    </div>
+  </div>
+<% end %>

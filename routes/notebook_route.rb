@@ -67,6 +67,7 @@ class NotebookApplication
 
     r.on 'search' do
       r.get do
+        @parameters = {}
         @notes = opts[:notes].all_notes
         @notes_search = {}
         if !r.params['birthday'].nil? && r.params['birthday'] != ''
@@ -114,6 +115,5 @@ class NotebookApplication
     #     end
     #   end
     # end
-
   end
 end

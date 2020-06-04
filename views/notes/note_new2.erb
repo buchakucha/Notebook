@@ -31,7 +31,7 @@
           <% end %>
       </div>
       <div class="large-12 cell">
-        <%= f.input(:address, type: :text, label: 'Адрес', placeholder: 'Москва')%>
+        <%= f.input(:address, type: :text, label: 'Адрес', placeholder: 'Ярославль, ул. Волкова, д. 1')%>
           <% if  @errors.key?(:address)%>
               <h6 style="color: red"><%= @errors[:address].first %></h6>
           <% end %>

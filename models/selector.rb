@@ -19,4 +19,12 @@ module Selector
     end
     select_notes
   end
+
+  def self.select_status(notes, status)
+    select_notes = []
+    notes.each do |note|
+      select_notes.append(note) if note.status == status
+    end
+    select_notes
+  end
 end
