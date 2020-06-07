@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Routes for the cool books of this application
+# Routes for homepage of this application
 class NotebookApplication
   path :home, '/homepage'
 

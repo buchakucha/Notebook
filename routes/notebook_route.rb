@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Routes for the cool books of this application
+# Routes for notes of this application
 class NotebookApplication
   path :notes, '/notebook'
   path :note_new, '/notebook/new'
@@ -94,26 +94,5 @@ class NotebookApplication
         end
       end
     end
-
-    # r.on 'new' do
-    #   r.get do
-    #     @parameters = {}
-    #     @errors = {}
-    #     view('note_new2')
-    #   end
-
-    #   r.post do
-    #     sym_params = r.params.map { |key, value| [key.to_sym, value] }.to_h
-    #     @params = NoteNewContract.new.call(sym_params)
-    #     @errors = @params.errors.to_h
-    #     if @params.success?
-    #       note = opts[:notes].add_note(@params.to_h)
-    #       r.redirect(path(note))
-    #     else
-    #       puts @errors
-    #       view('note_new2')
-    #     end
-    #   end
-    # end
   end
 end

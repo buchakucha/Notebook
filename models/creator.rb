@@ -17,7 +17,7 @@ module Creator
   end
 
   def self.create_file(note, text, file)
-    filepath = File.expand_path("../EVENT/#{note.surname}#{file}.txt", __dir__)
+    filepath = File.expand_path("../EVENT/#{note.surname}#{note.id}#{file}.txt", __dir__)
     outfile = File.new(filepath, 'w')
     outfile.puts(note.name + ' ' + note.surname + '! ' + text)
     outfile.close

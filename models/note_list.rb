@@ -14,6 +14,7 @@ class NoteList
 
   def all_notes
     @notes.values
+    # sort_by { |note| [note.surname, note.name] }
   end
 
   def note_by_id(id)

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Routes for the cool books of this application
+# Routes for invitations of this application
 class NotebookApplication
   path :invite, '/invitation'
   path :invite_luck, '/invitation/success'
@@ -24,9 +24,8 @@ class NotebookApplication
       end
     end
 
-      r.on 'success' do
-         view('success')
-      end
-
+    r.on 'success' do
+      view('success')
+    end
   end
 end
