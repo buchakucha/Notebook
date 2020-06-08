@@ -12,9 +12,12 @@ class NoteList
     end.to_h
   end
 
+  def all_notes_sort_surname
+    @notes.values.sort { |x, y| x.surname <=> y.surname }
+  end
+
   def all_notes
     @notes.values
-    # sort_by { |note| [note.surname, note.name] }
   end
 
   def note_by_id(id)

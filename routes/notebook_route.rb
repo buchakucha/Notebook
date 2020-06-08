@@ -18,7 +18,7 @@ class NotebookApplication
     set_layout_options(template: '../views/layout')
 
     r.is do
-      @notes = opts[:notes].all_notes
+      @notes = opts[:notes].all_notes_sort_surname
       view('notes')
     end
 
@@ -68,7 +68,7 @@ class NotebookApplication
     r.on 'search' do
       r.get do
         @parameters = {}
-        @notes = opts[:notes].all_notes
+        @notes = opts[:notes].all_notes_sort_surname
         @notes_search = {}
         if !r.params['birthday'].nil? && r.params['birthday'] != ''
           min_mon = Date.parse(r.params['birthday']).mon
