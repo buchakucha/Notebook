@@ -3,5 +3,5 @@
 require 'dry-schema'
 
 SearchSchema = Dry::Schema.Params do
-    required(:birthday).filled(:date)
+  required(:birthday).filled(:date)
 end

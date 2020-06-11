@@ -14,5 +14,3 @@ require_relative 'models/selector'
 require_relative 'models/sex_type'
 require_relative 'models/status_type'
 require_relative 'models/store'
-
-

@@ -67,11 +67,11 @@ class NotebookApplication
 
     r.on 'search' do
       r.get do
-        @parameters =  {}
+        @parameters = {}
         @notes = opts[:notes].all_notes_sort_surname
         @notes_search = {}
         if !r.params['birthday'].nil?
-          @parameters =  DryResultFormeWrapper.new(SearchSchema.call(r.params))
+          @parameters = DryResultFormeWrapper.new(SearchSchema.call(r.params))
           if @parameters.success?
             min_mon = Date.parse(r.params['birthday']).mon
             day = Date.parse(r.params['birthday']).day

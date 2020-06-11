@@ -15,7 +15,8 @@ module Selector
               end
     select_notes = []
     notes.each do |note|
-      if note.birthday.mon == min_mon && note.birthday.day >= day || note.birthday.mon == max_mon && note.birthday.day <= day
+      if note.birthday.mon == min_mon && note.birthday.day >= day ||
+         note.birthday.mon == max_mon && note.birthday.day <= day
         select_notes.append(note)
       end
     end
