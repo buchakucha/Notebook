@@ -1,5 +1,10 @@
 <div class="large-12 cell">
   <a class="button secondary" href="<%= note_new_path %>">Добавить запись</a>
+  <% if @notes.size == 0 %>
+   <div>
+    <h4 style="color:#BC8F8F; font-family: 'Caveat', cursive">В приложении нет информации о записях</h4>
+   <div>
+  <% else%>
     <table>
       <thead>
         <tr style="color:#000000; font-family: 'Caveat', cursive">
@@ -20,5 +25,6 @@
         <% end %>
       </tbody>
     </table>
+<% end %>
   <a href="<%= home_path %> " style="font-family: 'Caveat', cursive">На домашнюю страницу</a>
 </div>

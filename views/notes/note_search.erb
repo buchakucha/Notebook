@@ -1,8 +1,8 @@
 <% form({ method: :get },{ obj: @parameters }) do |f| %>
 <div class="large-12 cell">
     <div class="large-12 cell">
-      <%= f.input(:birthday, type: :date, label: 'Выберите дату для поиска ближайших Дней рождений')%>
-      <%= f.button(value: 'Найти', class: 'button secondary') %>
+      <%= f.input(:birthday, type: :date, label: 'Выберите дату для поиска ближайших Дней рождения')%>
+      <p align='right'><%= f.button(value: 'Найти', class: 'button secondary') %></p>
     </div>
  <% if @notes_search.size > 0 %>
 <table>
@@ -27,5 +27,4 @@
       </table>
     <% end %>
   </div>
-</div>
 <% end %>

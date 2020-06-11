@@ -67,12 +67,16 @@ class NotebookApplication
 
     r.on 'search' do
       r.get do
-        @parameters = {}
+        @parameters =  {}
         @notes = opts[:notes].all_notes_sort_surname
         @notes_search = {}
-        if !r.params['birthday'].nil? && r.params['birthday'] != ''
-          min_mon = Date.parse(r.params['birthday']).mon
-          @notes_search = Selector.select_birthday(@notes, min_mon)
+        if !r.params['birthday'].nil?
+          @parameters =  DryResultFormeWrapper.new(SearchSchema.call(r.params))
+          if @parameters.success?
+            min_mon = Date.parse(r.params['birthday']).mon
+            day = Date.parse(r.params['birthday']).day
+            @notes_search = Selector.select_birthday(@notes, min_mon, day)
+          end
         end
         view('note_search')
       end
